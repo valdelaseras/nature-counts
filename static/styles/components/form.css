@@ -17,3 +17,7 @@ form,
 	display: flex;
 	gap: 1rem;
 }
+
+input {
+	padding: 5px 10px;
+}
