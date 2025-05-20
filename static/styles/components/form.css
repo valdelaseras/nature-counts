@@ -1,0 +1,19 @@
+form {
+	padding: 1rem 0;
+	gap: 1rem;
+}
+
+form,
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-group {
+	gap: 1rem;
+}
+
+.form-footer {
+	display: flex;
+	gap: 1rem;
+}

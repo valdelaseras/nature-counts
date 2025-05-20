@@ -19,3 +19,12 @@
   <a href="/signup">Sign up</a>
 </nav>
 
+<style lang="css">
+  header {
+    padding: 1rem 2rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+</style>

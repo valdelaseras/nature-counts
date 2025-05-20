@@ -1,3 +1,7 @@
+<script lang="ts">
+	// isAuthenticated
+</script>
+
 <nav>
 	<span>Nav</span>
 </nav>

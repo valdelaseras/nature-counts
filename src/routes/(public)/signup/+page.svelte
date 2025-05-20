@@ -1,13 +1,19 @@
 <nav>
-	<a href="/static">Back</a>
+	<a href="/">Back</a>
 </nav>
 
-<form>
+<header>
 	<h1>Sign up</h1>
+</header>
 
-	<input type="email" required placeholder="Email address"/>
-	<input type="password" required placeholder="Password"/>
-	<input type="password" required placeholder="Confirm password"/>
+<form>
+	<div class="form-group">
+		<input type="email" required placeholder="Email address"/>
+		<input type="password" required placeholder="Password"/>
+		<input type="password" required placeholder="Confirm password"/>
+	</div>
 
-	<button type="submit">Sign up</button>
+	<footer class="form-footer">
+		<button type="submit">Sign up</button>
+	</footer>
 </form>

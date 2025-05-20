@@ -1,14 +1,21 @@
 <nav>
-	<a href="/static">Back</a>
+	<a href="/">Back</a>
 </nav>
 
-<form>
+<header>
 	<h1>Login</h1>
+</header>
 
-	<input type="email" required placeholder="Email address"/>
-	<input type="password" required placeholder="Password"/>
+<form>
+	<div class="form-group">
+		<input type="email" required placeholder="Email address"/>
+		<input type="password" required placeholder="Password"/>
+	</div>
 
-	<button type="submit">Login</button>
-	<a href="/signup">Sign up</a>
-	<a href="/account">Mock login</a>
+	<footer class="form-footer">
+		<button type="submit">Login</button>
+		<a href="/signup">Sign up</a>
+		<a href="/lobby">Mock login</a>
+	</footer>
 </form>
+
