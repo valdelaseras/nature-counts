@@ -3,9 +3,12 @@
 	import { page } from '$app/state';
 
 	// Functions
-	import { resolvePageName } from '$lib/shared/pages.js';
+	import { PAGE_PATH, resolvePageName } from '$lib/shared/pages.js';
 
-	let { displayQuickNav = true } = $props();
+	let {
+		displayQuickNav = true,
+		quickNavTarget = 'dashboard'
+	} = $props();
 
 	let pageName = resolvePageName(page.url.pathname);
 </script>
@@ -17,7 +20,7 @@
 
 	{#if displayQuickNav}
 		<nav aria-label="Site navigation">
-			<a href="/dashboard">To dashboard</a>
+			<a href={PAGE_PATH[quickNavTarget]}>Back</a>
 		</nav>
 	{/if}
 </header>

@@ -40,7 +40,6 @@
 
 <style lang="css">
 	.tile-list {
-		background-color: rebeccapurple;
 		padding-left: 0;
 		list-style: none;
 		display: flex;
