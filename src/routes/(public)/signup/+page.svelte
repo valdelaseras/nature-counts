@@ -3,7 +3,7 @@
 	const invalidPasswordMessage = 'These passwords do not match';
 
 	let email = $state('');
-	let emailInput = $state<HTMLInputElement>();
+	let emailInputElement = $state<HTMLInputElement>();
 
 	let password = $state('');
 	let confirmPassword = $state('');
@@ -24,8 +24,8 @@
 	}
 
 	$effect(() => {
-		if (emailInput && email) {
-			emailIsValid = emailInput.validity.valid;
+		if (emailInputElement && email) {
+			emailIsValid = emailInputElement.validity.valid;
 
 			if (emailIsValid) {
 				displayInvalidEmailMessage = false;
@@ -64,7 +64,7 @@
 				<label for="email">Email address</label>
 				<input
 					onchange={handleEmailChange}
-					bind:this={emailInput}
+					bind:this={emailInputElement}
 					bind:value={email}
 					id="email"
 					name="email"
@@ -106,7 +106,7 @@
 
 		<footer class="form-footer">
 			<button
-				disabled={!formIsValid}
+				disabled={!formIsValid || !email.length}
 				type="submit">
 					Sign up
 			</button>
