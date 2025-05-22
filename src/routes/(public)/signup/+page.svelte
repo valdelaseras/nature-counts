@@ -10,11 +10,10 @@
 
 	let email = $state('');
 	let emailInputElement = $state<HTMLInputElement>();
+	let emailIsValid = $state(false);
 
 	let password = $state('');
 	let confirmPassword = $state('');
-
-	let emailIsValid = $state(false);
 	let passwordIsValid = $state(false);
 
 	let displayInvalidEmailMessage = $state(false);
@@ -119,6 +118,7 @@
 	{/if}
 
 	{#if form?.error}
+		<!--		@todo: handle different error cases-->
 		<p class="error">
 			Sorry, it looks like something has gone wrong or this email is already in use. Please try
 			again or come back later.

@@ -1,3 +1,52 @@
+<script lang="ts">
+	import type { PageProps } from './$types';
+
+	let { form }: PageProps = $props();
+
+	const invalidEmailMessage = 'Please enter a valid email address';
+	const missingPasswordMessage = 'Please enter a password';
+
+	let email = $state('');
+	let emailInputElement = $state<HTMLInputElement>();
+	let emailIsValid = $state(false);
+
+	let password = $state('');
+	let passwordIsValid = $state(false);
+
+	let displayInvalidEmailMessage = $state(false);
+	let displayMissingPasswordMessage = $state(false);
+
+	const handleEmailChange = () => {
+		displayInvalidEmailMessage = Boolean(email && !emailIsValid);
+	};
+
+	const handlePasswordChange = () => {
+		displayMissingPasswordMessage = !password.length;
+	};
+
+	$effect(() => {
+		if (emailInputElement && email) {
+			emailIsValid = emailInputElement.validity.valid;
+
+			if (emailIsValid) {
+				displayInvalidEmailMessage = false;
+			}
+		}
+	});
+
+	$effect(() => {
+		if (password) {
+			passwordIsValid = Boolean(password.length);
+
+			if (passwordIsValid) {
+				displayMissingPasswordMessage = false;
+			}
+		}
+	});
+
+	const formIsValid = $derived(emailIsValid && passwordIsValid);
+</script>
+
 <nav aria-label="Site navigation">
 	<a href="/">Back</a>
 </nav>
@@ -6,11 +55,14 @@
 	<h1>Login</h1>
 </header>
 
-<form>
+<form method="POST" action="?/login">
 	<div class="form-group">
 		<div class="form-field">
 			<label for="email">Email address</label>
 			<input
+				onchange={handleEmailChange}
+				bind:this={emailInputElement}
+				bind:value={email}
 				id="email"
 				name="email"
 				type="email"
@@ -18,11 +70,16 @@
 				required
 				placeholder="Email address"
 			/>
+			{#if displayInvalidEmailMessage}
+				<small class="error">{invalidEmailMessage}</small>
+			{/if}
 		</div>
 
 		<div class="form-field">
 			<label for="password">Password</label>
 			<input
+				onchange={handlePasswordChange}
+				bind:value={password}
 				id="password"
 				name="password"
 				type="password"
@@ -31,11 +88,28 @@
 				placeholder="Password"
 			/>
 		</div>
+		{#if displayMissingPasswordMessage}
+			<small class="error">{missingPasswordMessage}</small>
+		{/if}
 	</div>
 
 	<footer class="form-footer">
-		<button type="submit">Login</button>
+		<button disabled="{!formIsValid || !email.length}" type="submit">Login</button>
 		<a href="/signup">Sign up</a>
-		<a href="/home">Mock login</a>
 	</footer>
 </form>
+
+<div class="form-result">
+	{#if form?.success}
+		<!--@todo: redirect-->
+		<p>Login successful, redirecting...</p>
+	{/if}
+
+	{#if form?.error}
+		<!--		@todo: handle different error cases-->
+		<p class="error">
+			Sorry, it looks like something has gone wrong or your login credentials are incorrect. Please try
+			again or come back later.
+		</p>
+	{/if}
+</div>
