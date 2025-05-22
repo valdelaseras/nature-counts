@@ -7,7 +7,7 @@ type Page = {
 export const PAGES: Page[] = [
 	{
 		id: 'landing',
-		displayName: 'Landing',
+		displayName: 'Nature Counts',
 		path: '/'
 	},
 	{

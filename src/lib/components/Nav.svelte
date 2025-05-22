@@ -18,7 +18,7 @@
 	<span>Nav</span>
 	<!--@todo: only if user/authed-->
 	<button onclick={() => (displayMenu = !displayMenu)}>
-		{displayMenu ? 'Close' : 'Open'} menu
+		{displayMenu ? 'Close' : 'Open'}
 	</button>
 
 	{#if displayMenu}
@@ -34,8 +34,9 @@
 
 			<ul class="menu-list">
 				<li>
-					<!--@todo-->
-					<button onclick={() => console.log('sign out and redirect to /')}>Logout</button>
+					<form method="POST" action="/logout">
+						<button type="submit">Logout</button>
+					</form>
 				</li>
 			</ul>
 		</div>
@@ -65,11 +66,5 @@
 		right: 0;
 		top: 53px;
 		gap: 1.5rem;
-	}
-
-	.menu-list {
-		padding-left: 0;
-		list-style: none;
-		gap: 1rem;
 	}
 </style>

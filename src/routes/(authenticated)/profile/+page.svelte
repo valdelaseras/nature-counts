@@ -14,6 +14,8 @@
 			<h2>Settings</h2>
 		</header>
 		<div>
+			<!--todo: display name-->
+			<!--todo: light / dark theme-->
 			<span>A setting</span>
 		</div>
 	</section>
@@ -38,5 +40,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	ul {
+			flex-direction: column;
 	}
 </style>

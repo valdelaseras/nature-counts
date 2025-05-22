@@ -1,3 +1,4 @@
+// Supabase
 import { supabase } from '$lib/supabaseClient';
 
 // Svelte
@@ -5,6 +6,9 @@ import { redirect } from '@sveltejs/kit';
 
 // Types
 import type { Actions } from './$types';
+
+// Shared
+import { PAGE_PATH } from '$lib/shared/pages';
 
 export const actions: Actions = {
 	login: async ({ request }) => {
@@ -25,6 +29,6 @@ export const actions: Actions = {
 			};
 		}
 
-		throw redirect(303, '/dashboard');
+		throw redirect(303, PAGE_PATH['dashboard']);
 	}
 };

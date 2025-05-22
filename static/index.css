@@ -1,5 +1,6 @@
 @import './styles/typography.css';
 
+@import './styles/components/list.css';
 @import './styles/components/button.css';
 @import './styles/components/form.css';
 

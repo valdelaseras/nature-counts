@@ -40,11 +40,7 @@
 
 <style lang="css">
 	.tile-list {
-		padding-left: 0;
-		list-style: none;
-		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem;
 
 		li {
 			width: calc(50% - 0.5rem);
