@@ -2,8 +2,8 @@
 	// Svelte
 	import { page } from '$app/state';
 
-	// Functions
-	import { PAGE_PATH, resolvePageName } from '$lib/shared/pages.js';
+	// Shared
+	import { PAGE_PATH, resolvePageName } from '$lib/shared/pages';
 
 	let {
 		displayQuickNav = true,
