@@ -1,19 +1,19 @@
 <script lang="ts">
-	let email: string;
-	let emailInput: HTMLInputElement;
+	const invalidEmailMessage = 'Please enter a valid email address';
+	const invalidPasswordMessage = 'These passwords do not match';
 
-	let password: string;
-	let confirmPassword: string;
+	let email = $state('');
+	let emailInput = $state<HTMLInputElement>();
 
-	let emailIsValid: boolean;
-	let passwordIsValid: boolean;
+	let password = $state('');
+	let confirmPassword = $state('');
 
-	let invalidEmailMessage = 'Please enter a valid email address';
-	let invalidPasswordMessage = 'These passwords do not match';
+	let emailIsValid = $state(false);
+	let passwordIsValid = $state(false);
 
-	let displayForm = true;
-	let displayInvalidEmailMessage: boolean = false;
-	let displayInvalidPasswordMessage: boolean = false;
+	let displayForm = $state(true);
+	let displayInvalidEmailMessage = $state(false);
+	let displayInvalidPasswordMessage = $state(false);
 
 	const handleEmailChange = () => {
 		displayInvalidEmailMessage = Boolean(email && !emailIsValid);
@@ -23,23 +23,27 @@
 		displayInvalidPasswordMessage = Boolean(confirmPassword && !passwordIsValid);
 	}
 
-	$: if (emailInput && email) {
-		emailIsValid = emailInput.validity.valid;
+	$effect(() => {
+		if (emailInput && email) {
+			emailIsValid = emailInput.validity.valid;
 
-		if (emailIsValid) {
-			displayInvalidEmailMessage = false;
+			if (emailIsValid) {
+				displayInvalidEmailMessage = false;
+			}
 		}
-	}
+	});
 
-	$: if (password && confirmPassword) {
-		passwordIsValid = password === confirmPassword;
+	$effect(() => {
+		if (password && confirmPassword) {
+			passwordIsValid = password === confirmPassword;
 
-		if (passwordIsValid) {
-			displayInvalidPasswordMessage = false;
+			if (passwordIsValid) {
+				displayInvalidPasswordMessage = false;
+			}
 		}
-	}
+	});
 
-	$: formIsValid = passwordIsValid && emailIsValid;
+	const formIsValid = $derived(passwordIsValid && emailIsValid);
 </script>
 
 <nav aria-label="Site navigation">
@@ -69,7 +73,7 @@
 					autocomplete="email"
 					placeholder="Email address"/>
 				{#if displayInvalidEmailMessage}
-					<small>{invalidEmailMessage}</small>
+					<small class="error">{invalidEmailMessage}</small>
 				{/if}
 			</div>
 			<div class="form-field">
@@ -95,7 +99,7 @@
 					autocomplete="new-password"
 					placeholder="Confirm password"/>
 				{#if displayInvalidPasswordMessage}
-					<small>{invalidPasswordMessage}</small>
+					<small class="error">{invalidPasswordMessage}</small>
 				{/if}
 			</div>
 		</div>
