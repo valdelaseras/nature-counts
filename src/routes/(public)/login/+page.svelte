@@ -1,5 +1,12 @@
 <script lang="ts">
+	// Svelte
 	import type { PageProps } from './$types';
+
+	// Components
+	import PageHeader from '$lib/components/PageHeader.svelte';
+
+	// Shared
+	import { PAGE_PATH } from '$lib/shared/pages';
 
 	let { form }: PageProps = $props();
 
@@ -47,13 +54,7 @@
 	const formIsValid = $derived(emailIsValid && passwordIsValid);
 </script>
 
-<nav aria-label="Site navigation">
-	<a href="/">Back</a>
-</nav>
-
-<header>
-	<h1>Login</h1>
-</header>
+<PageHeader displayQuickNav={false} />
 
 <form method="POST" action="?/login">
 	<div class="form-group">
@@ -94,8 +95,8 @@
 	</div>
 
 	<footer class="form-footer">
-		<button disabled="{!formIsValid || !email.length}" type="submit">Login</button>
-		<a href="/signup">Sign up</a>
+		<button disabled={!formIsValid || !email.length} type="submit">Login</button>
+		<a href={PAGE_PATH['signup']}>Sign up</a>
 	</footer>
 </form>
 

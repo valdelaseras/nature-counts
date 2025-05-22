@@ -1,11 +1,13 @@
-<article>
-	<nav aria-label="Site navigation">
-		<a href="/home">Back</a>
-	</nav>
+<script>
+	// Components
+	import PageHeader from '$lib/components/PageHeader.svelte';
 
-	<header>
-		<h1>Profile</h1>
-	</header>
+	// Shared
+	import { PAGE_PATH } from '$lib/shared/pages';
+</script>
+
+<article>
+	<PageHeader />
 
 	<section>
 		<header>
@@ -22,10 +24,10 @@
 		</header>
 		<ul>
 			<li>
-				<a href="/match/current">Current matches</a>
+				<a href={PAGE_PATH['current-matches']}>Current matches</a>
 			</li>
 			<li>
-				<a href="/match/history">Match history</a>
+				<a href={PAGE_PATH['match-history']}>Match history</a>
 			</li>
 		</ul>
 	</section>

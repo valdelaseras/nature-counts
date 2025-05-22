@@ -1,7 +1,13 @@
+<script lang="ts">
+	// Components
+	import PageHeader from '$lib/components/PageHeader.svelte';
+
+	// Shared
+	import { PAGE_PATH } from '$lib/shared/pages';
+</script>
+
 <article>
-	<header>
-		<h1>Home</h1>
-	</header>
+	<PageHeader displayQuickNav={false} />
 
 	<section>
 		<header>
@@ -10,13 +16,13 @@
 		<nav aria-label="Site navigation">
 			<ul class="tile-list">
 				<li>
-					<a href="/match/new">New match</a>
+					<a href={PAGE_PATH['new-match']}>New match</a>
 				</li>
 				<li>
-					<a href="/match/current">Current matches</a>
+					<a href={PAGE_PATH['current-matches']}>Current matches</a>
 				</li>
 				<li>
-					<a href="/match/history">Match history</a>
+					<a href={PAGE_PATH['match-history']}>Match history</a>
 				</li>
 			</ul>
 		</nav>
@@ -27,7 +33,7 @@
 			<h2>Profile</h2>
 		</header>
 		<nav aria-label="Site navigation">
-			<a href="/profile">View your profile</a>
+			<a href={PAGE_PATH['profile']}>View your profile</a>
 		</nav>
 	</section>
 </article>

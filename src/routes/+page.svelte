@@ -1,3 +1,11 @@
+<script>
+	// Components
+	import PageHeader from '$lib/components/PageHeader.svelte';
+
+	// Shared
+	import { PAGE_PATH } from '$lib/shared/pages';
+</script>
+
 <!--<script>-->
 <!--  let { data } = $props();-->
 
@@ -10,21 +18,21 @@
 <!--  {/each}-->
 <!--</ul>-->
 
-<header>
-	<h1>Placeholder</h1>
-</header>
+<main>
+	<PageHeader displayQuickNav={false} />
 
-<nav aria-label="Site navigation">
-	<a href="/login">Login</a>
-	<a href="/signup">Sign up</a>
-</nav>
+	<nav aria-label="Site navigation">
+		<a href={PAGE_PATH['login']}>Login</a>
+		<a href={PAGE_PATH['signup']}>Sign up</a>
+	</nav>
+</main>
 
 <style lang="css">
-	header {
+	main {
 		padding: 1rem 2rem;
 	}
 
 	nav {
-		padding: 1rem 2rem;
+		padding: 1rem 0;
 	}
 </style>

@@ -2,6 +2,7 @@
 	// @todo: set minimum password requirements
 
 	import type { PageProps } from './$types';
+	import PageHeader from '$lib/components/PageHeader.svelte';
 
 	let { form }: PageProps = $props();
 
@@ -50,13 +51,7 @@
 	const formIsValid = $derived(passwordIsValid && emailIsValid);
 </script>
 
-<nav aria-label="Site navigation">
-	<a href="/">Back</a>
-</nav>
-
-<header>
-	<h1>Sign up</h1>
-</header>
+<PageHeader displayQuickNav={false} />
 
 <form method="POST" action="?/signup">
 	<div class="form-group">

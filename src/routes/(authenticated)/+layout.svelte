@@ -1,5 +1,11 @@
 <script lang="ts">
 	import Nav from '$lib/components/Nav.svelte';
+	// import { onMount } from 'svelte';
+	// import { initAuth } from '$lib/stores/auth';
+	//
+	// onMount(() => {
+	// 	initAuth();
+	// });
 </script>
 
 <Nav />
