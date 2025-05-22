@@ -14,7 +14,7 @@
   <h1>Placeholder</h1>
 </header>
 
-<nav>
+<nav aria-label="Site navigation">
   <a href="/login">Login</a>
   <a href="/signup">Sign up</a>
 </nav>

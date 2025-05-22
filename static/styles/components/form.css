@@ -4,7 +4,8 @@ form {
 }
 
 form,
-.form-group {
+.form-group,
+.form-field {
 	display: flex;
 	flex-direction: column;
 }
@@ -13,9 +14,14 @@ form,
 	gap: 1rem;
 }
 
+.form-field {
+	gap: 0.5rem;
+}
+
 .form-footer {
 	display: flex;
 	gap: 1rem;
+	padding: 1rem 0;
 }
 
 input {

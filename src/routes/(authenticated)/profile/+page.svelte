@@ -18,6 +18,9 @@
 		</header>
 		<ul>
 			<li>
+				<a href="/match/current">Current matches</a>
+			</li>
+			<li>
 				<a href="/match/history">Match history</a>
 			</li>
 		</ul>

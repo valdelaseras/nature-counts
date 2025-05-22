@@ -2,7 +2,7 @@
 	// isAuthenticated
 </script>
 
-<nav>
+<nav aria-label="Site navigation">
 	<span>Nav</span>
 </nav>
 

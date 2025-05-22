@@ -1,16 +1,24 @@
 <article>
 	<header>
-		<h1>Lobby</h1>
+		<h1>Home</h1>
 	</header>
 
 	<section>
-		<nav>
+		<header>
+			<h2>
+				Matches
+			</h2>
+		</header>
+		<nav aria-label="Site navigation">
 			<ul class="tile-list">
 				<li>
-					<a href="/match/new">Start a new match</a>
+					<a href="/match/new">New match</a>
 				</li>
 				<li>
-					<a href="/match/history">View match history</a>
+					<a href="/match/current">Current matches</a>
+				</li>
+				<li>
+					<a href="/match/history">Match history</a>
 				</li>
 			</ul>
 		</nav>
@@ -19,6 +27,7 @@
 
 <style lang="css">
 	.tile-list {
+			background-color: rebeccapurple;
 			padding-left: 0;
 			list-style: none;
 			display: flex;
@@ -32,8 +41,11 @@
               background-color: aquamarine;
               width: 100%;
               display: flex;
+							flex-direction: column;
+							align-items: center;
               justify-content: center;
               padding: 1rem;
+							min-height: 10rem;
               box-sizing: border-box;
           }
 

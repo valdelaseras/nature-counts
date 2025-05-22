@@ -1,4 +1,4 @@
-<nav>
+<nav aria-label="Site navigation">
 	<a href="/">Back</a>
 </nav>
 
@@ -8,14 +8,31 @@
 
 <form>
 	<div class="form-group">
-		<input type="email" required placeholder="Email address"/>
-		<input type="password" required placeholder="Password"/>
+		<div class="form-field">
+			<label for="email">Email address</label>
+			<input
+				id="email"
+				type="email"
+				autocomplete="email"
+				required
+				placeholder="Email address"/>
+		</div>
+
+		<div class="form-field">
+			<label for="password">Password</label>
+			<input
+				id="password"
+				type="password"
+				autocomplete="current-password"
+				required
+				placeholder="Password"/>
+		</div>
 	</div>
 
 	<footer class="form-footer">
 		<button type="submit">Login</button>
 		<a href="/signup">Sign up</a>
-		<a href="/lobby">Mock login</a>
+		<a href="/home">Mock login</a>
 	</footer>
 </form>
 
