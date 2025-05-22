@@ -24,6 +24,10 @@ form,
 	padding: 1rem 0;
 }
 
+.form-result {
+	text-align: center;
+}
+
 input {
 	padding: 5px 10px;
 }

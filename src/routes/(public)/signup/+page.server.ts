@@ -1,6 +1,7 @@
 import { supabase } from '$lib/supabaseClient';
 import type { Actions } from './$types';
 
+// @todo: set minimum password requirements
 export const actions: Actions = {
 	signup: async ({ request }) => {
 		const data = await request.formData();
@@ -16,9 +17,15 @@ export const actions: Actions = {
 		});
 
 		if (error) {
-			return { success: false, error: error.message };
+			return {
+				success: false,
+				error: error.message
+			};
 		}
 
-		return { success: true, data: authData };
+		return {
+			success: true,
+			data: authData
+		};
 	}
 };
