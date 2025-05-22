@@ -56,14 +56,14 @@
 
 {#if displayForm}
 	<form
-		on:submit={() => displayForm = false}
+		onsubmit={() => displayForm = false}
 		method="POST"
 		action="?/signup">
 		<div class="form-group">
 			<div class="form-field">
 				<label for="email">Email address</label>
 				<input
-					on:change={handleEmailChange}
+					onchange={handleEmailChange}
 					bind:this={emailInput}
 					bind:value={email}
 					id="email"
@@ -79,7 +79,7 @@
 			<div class="form-field">
 				<label for="new-password">Create a password</label>
 				<input
-					on:change={handlePasswordChange}
+					onchange={handlePasswordChange}
 					bind:value={password}
 					id="new-password"
 					name="password"
@@ -91,7 +91,7 @@
 			<div class="form-field">
 				<label for="confirm-password">Confirm password</label>
 				<input
-					on:change={handlePasswordChange}
+					onchange={handlePasswordChange}
 					bind:value={confirmPassword}
 					id="confirm-password"
 					type="password"
