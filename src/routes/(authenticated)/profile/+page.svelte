@@ -33,8 +33,8 @@
 
 <style lang="css">
 	article {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 </style>

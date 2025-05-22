@@ -16,7 +16,8 @@
 				type="email"
 				autocomplete="email"
 				required
-				placeholder="Email address"/>
+				placeholder="Email address"
+			/>
 		</div>
 
 		<div class="form-field">
@@ -27,7 +28,8 @@
 				type="password"
 				autocomplete="current-password"
 				required
-				placeholder="Password"/>
+				placeholder="Password"
+			/>
 		</div>
 	</div>
 
@@ -37,4 +39,3 @@
 		<a href="/home">Mock login</a>
 	</footer>
 </form>
-

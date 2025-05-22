@@ -1,8 +1,7 @@
-@import "./styles/typography.css";
-@import "./styles/components/form.css";
+@import './styles/typography.css';
+@import './styles/components/form.css';
 
 body {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
-

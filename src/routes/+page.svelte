@@ -11,20 +11,20 @@
 <!--</ul>-->
 
 <header>
-  <h1>Placeholder</h1>
+	<h1>Placeholder</h1>
 </header>
 
 <nav aria-label="Site navigation">
-  <a href="/login">Login</a>
-  <a href="/signup">Sign up</a>
+	<a href="/login">Login</a>
+	<a href="/signup">Sign up</a>
 </nav>
 
 <style lang="css">
-  header {
-    padding: 1rem 2rem;
-  }
+	header {
+		padding: 1rem 2rem;
+	}
 
-  nav {
-    padding: 1rem 2rem;
-  }
+	nav {
+		padding: 1rem 2rem;
+	}
 </style>

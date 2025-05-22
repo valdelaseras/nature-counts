@@ -3,14 +3,14 @@
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<Nav/>
+<Nav />
 <main>
 	<slot></slot>
 </main>
-<Footer/>
+<Footer />
 
 <style lang="css">
 	main {
-			padding: 1rem 2rem;
+		padding: 1rem 2rem;
 	}
 </style>

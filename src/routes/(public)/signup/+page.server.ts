@@ -12,8 +12,8 @@ export const actions: Actions = {
 			email,
 			password,
 			options: {
-				emailRedirectTo: 'http://localhost:5173/home', // @todo
-			},
+				emailRedirectTo: 'http://localhost:5173/home' // @todo
+			}
 		});
 
 		if (error) {

@@ -22,11 +22,11 @@
 
 	const handleEmailChange = () => {
 		displayInvalidEmailMessage = Boolean(email && !emailIsValid);
-	}
+	};
 
 	const handlePasswordChange = () => {
 		displayInvalidPasswordMessage = Boolean(confirmPassword && !passwordIsValid);
-	}
+	};
 
 	$effect(() => {
 		if (emailInputElement && email) {
@@ -59,9 +59,7 @@
 	<h1>Sign up</h1>
 </header>
 
-<form
-	method="POST"
-	action="?/signup">
+<form method="POST" action="?/signup">
 	<div class="form-group">
 		<div class="form-field">
 			<label for="email">Email address</label>
@@ -74,7 +72,8 @@
 				type="email"
 				required
 				autocomplete="email"
-				placeholder="Email address"/>
+				placeholder="Email address"
+			/>
 			{#if displayInvalidEmailMessage}
 				<small class="error">{invalidEmailMessage}</small>
 			{/if}
@@ -89,7 +88,8 @@
 				type="password"
 				required
 				autocomplete="new-password"
-				placeholder="Password"/>
+				placeholder="Password"
+			/>
 		</div>
 		<div class="form-field">
 			<label for="confirm-password">Confirm password</label>
@@ -100,7 +100,8 @@
 				type="password"
 				required
 				autocomplete="new-password"
-				placeholder="Confirm password"/>
+				placeholder="Confirm password"
+			/>
 			{#if displayInvalidPasswordMessage}
 				<small class="error">{invalidPasswordMessage}</small>
 			{/if}
@@ -108,11 +109,7 @@
 	</div>
 
 	<footer class="form-footer">
-		<button
-			disabled={!formIsValid || !email.length}
-			type="submit">
-				Sign up
-		</button>
+		<button disabled={!formIsValid || !email.length} type="submit"> Sign up </button>
 	</footer>
 </form>
 
@@ -122,6 +119,9 @@
 	{/if}
 
 	{#if form?.error}
-		<p class="error">Sorry, it looks like something has gone wrong or this email is already in use. Please try again or come back later.</p>
+		<p class="error">
+			Sorry, it looks like something has gone wrong or this email is already in use. Please try
+			again or come back later.
+		</p>
 	{/if}
 </div>
