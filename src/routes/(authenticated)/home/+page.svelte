@@ -23,6 +23,17 @@
 			</ul>
 		</nav>
 	</section>
+
+	<section>
+		<header>
+			<h2>
+				Profile
+			</h2>
+		</header>
+		<nav aria-label="Site navigation">
+			<a href="/profile">View your profile</a>
+		</nav>
+	</section>
 </article>
 
 <style lang="css">

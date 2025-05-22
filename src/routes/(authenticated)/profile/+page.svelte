@@ -1,4 +1,8 @@
 <article>
+	<nav aria-label="Site navigation">
+		<a href="/home">Back</a>
+	</nav>
+
 	<header>
 		<h1>Profile</h1>
 	</header>
