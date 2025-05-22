@@ -1,4 +1,9 @@
 import { supabase } from '$lib/supabaseClient';
+
+// Svelte
+import { redirect } from '@sveltejs/kit';
+
+// Types
 import type { Actions } from './$types';
 
 export const actions: Actions = {
@@ -8,12 +13,11 @@ export const actions: Actions = {
 		// @todo: plaintext pw
 		const password = data.get('password') as string;
 
-		const { data: authData, error } = await supabase.auth.signInWithPassword({
+		const { error } = await supabase.auth.signInWithPassword({
 			email,
 			password
 		});
 
-		// @todo: handle different error cases
 		if (error) {
 			return {
 				success: false,
@@ -21,9 +25,6 @@ export const actions: Actions = {
 			};
 		}
 
-		return {
-			success: true,
-			data: authData
-		};
+		throw redirect(303, '/home');
 	}
 };

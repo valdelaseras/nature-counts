@@ -100,16 +100,9 @@
 </form>
 
 <div class="form-result">
-	{#if form?.success}
-		<!--@todo: redirect-->
-		<p>Login successful, redirecting...</p>
-	{/if}
-
 	{#if form?.error}
-		<!--		@todo: handle different error cases-->
 		<p class="error">
-			Sorry, it looks like something has gone wrong or your login credentials are incorrect. Please try
-			again or come back later.
+			{form.error}
 		</p>
 	{/if}
 </div>

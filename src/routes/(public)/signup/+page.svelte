@@ -118,10 +118,8 @@
 	{/if}
 
 	{#if form?.error}
-		<!--		@todo: handle different error cases-->
 		<p class="error">
-			Sorry, it looks like something has gone wrong or this email is already in use. Please try
-			again or come back later.
+			{form.error}
 		</p>
 	{/if}
 </div>
