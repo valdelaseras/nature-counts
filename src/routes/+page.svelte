@@ -33,14 +33,14 @@
 		</ul>
 	</nav>
 </main>
-<Footer/>
+<Footer />
 
 <style lang="css">
 	main {
 		padding: 1rem 2rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	nav {

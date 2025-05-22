@@ -43,6 +43,6 @@
 	}
 
 	ul {
-			flex-direction: column;
+		flex-direction: column;
 	}
 </style>

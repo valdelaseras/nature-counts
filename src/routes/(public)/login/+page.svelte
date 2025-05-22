@@ -54,7 +54,7 @@
 	const formIsValid = $derived(emailIsValid && passwordIsValid);
 </script>
 
-<PageHeader quickNavTarget='landing' />
+<PageHeader quickNavTarget="landing" />
 
 <form method="POST" action="?/login">
 	<div class="form-group">
