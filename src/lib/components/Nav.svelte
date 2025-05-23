@@ -2,8 +2,17 @@
 	// Svelte
 	import { afterNavigate } from '$app/navigation';
 
+	// Supabase
+	import type { User } from '@supabase/supabase-js';
+
 	// Shared
 	import { PAGE_PATH } from '$lib/shared/pages';
+
+	interface Props {
+		user?: User | null;
+	}
+
+	let { user }: Props = $props();
 
 	let displayMenu = $state(false);
 
@@ -16,10 +25,11 @@
 
 <nav aria-label="Site navigation">
 	<span>Nav</span>
-	<!--@todo: only if user/authed-->
-	<button onclick={() => (displayMenu = !displayMenu)}>
-		{displayMenu ? 'Close' : 'Open'}
-	</button>
+	{#if user}
+		<button onclick={() => (displayMenu = !displayMenu)}>
+			{displayMenu ? 'Close' : 'Open'}
+		</button>
+	{/if}
 
 	{#if displayMenu}
 		<div class="menu">

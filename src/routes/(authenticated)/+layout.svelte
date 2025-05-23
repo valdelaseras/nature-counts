@@ -1,16 +1,21 @@
 <script lang="ts">
+	// Components
 	import Nav from '$lib/components/Nav.svelte';
-	// import { onMount } from 'svelte';
-	// import { initAuth } from '$lib/stores/auth';
-	//
-	// onMount(() => {
-	// 	initAuth();
-	// });
+
+	// Svelte
+	import type { LayoutData } from './$types';
+
+	interface Props {
+		data: LayoutData;
+		children: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 </script>
 
-<Nav />
+<Nav user={data.user} />
 <main>
-	<slot></slot>
+	{@render children()}
 </main>
 
 <style lang="css">
