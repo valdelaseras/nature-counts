@@ -3,15 +3,13 @@ import { supabase } from '$lib/supabaseClient';
 
 // Types
 import type { Match } from '$lib/shared/types';
-import type { PageServerLoad }  from './$types';
+import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
-	console.log(params.id)
+	console.log(params.id);
 
 	// retrieve the target match
-	const {
-		data: match, error
-	} = await supabase
+	const { data: match, error } = await supabase
 		.from('matches')
 		.select()
 		.eq('id', params.id)
@@ -26,6 +24,6 @@ export const load: PageServerLoad = async ({ params }) => {
 	return {
 		match
 	} satisfies {
-		match: Match
+		match: Match;
 	};
 };

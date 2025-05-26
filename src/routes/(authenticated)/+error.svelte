@@ -6,17 +6,15 @@
 </script>
 
 <main>
-	<PageHeader
-		displayQuickNav={false}
-		manualPageName="Whoops!" />
+	<PageHeader displayQuickNav={false} manualPageName="Whoops!" />
 
 	<h1>{page?.error?.message}</h1>
 </main>
 
 <style lang="css">
-    main {
-        padding: 1rem 2rem;
-        display: flex;
-        flex-direction: column;
-    }
+	main {
+		padding: 1rem 2rem;
+		display: flex;
+		flex-direction: column;
+	}
 </style>

@@ -12,10 +12,10 @@ import { PAGE_PATH } from '$lib/shared/pages';
 
 export const actions: Actions = {
 	login: async ({ request }) => {
-		const data = await request.formData();
-		const email = data.get('email') as string;
+		const formData = await request.formData();
+		const email = formData.get('email') as string;
 		// @todo: plaintext pw
-		const password = data.get('password') as string;
+		const password = formData.get('password') as string;
 
 		const { error } = await supabase.auth.signInWithPassword({
 			email,

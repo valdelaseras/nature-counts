@@ -5,17 +5,15 @@
 </script>
 
 <main>
-	<PageHeader
-		quickNavTarget="landing"
-		manualPageName="Whoops!" />
+	<PageHeader quickNavTarget="landing" manualPageName="Whoops!" />
 
 	<h1>{page?.error?.message}</h1>
 </main>
 
 <style lang="css">
-    main {
-        padding: 1rem 2rem;
-        display: flex;
-        flex-direction: column;
-    }
+	main {
+		padding: 1rem 2rem;
+		display: flex;
+		flex-direction: column;
+	}
 </style>

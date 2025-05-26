@@ -54,56 +54,60 @@
 	const formIsValid = $derived(emailIsValid && passwordIsValid);
 </script>
 
-<PageHeader quickNavTarget="landing" />
+<article>
+	<PageHeader quickNavTarget="landing" />
 
-<form method="POST" action="?/login">
-	<div class="form-group">
-		<div class="form-field">
-			<label for="email">Email address</label>
-			<input
-				onchange={handleEmailChange}
-				bind:this={emailInputElement}
-				bind:value={email}
-				id="email"
-				name="email"
-				type="email"
-				autocomplete="email"
-				required
-				placeholder="Email address"
-			/>
-			{#if displayInvalidEmailMessage}
-				<small class="error">{invalidEmailMessage}</small>
+	<section>
+		<form method="POST" action="?/login">
+			<div class="form-group">
+				<div class="form-field">
+					<label for="email">Email address</label>
+					<input
+						onchange={handleEmailChange}
+						bind:this={emailInputElement}
+						bind:value={email}
+						id="email"
+						name="email"
+						type="email"
+						autocomplete="email"
+						required
+						placeholder="Email address"
+					/>
+					{#if displayInvalidEmailMessage}
+						<small class="error">{invalidEmailMessage}</small>
+					{/if}
+				</div>
+
+				<div class="form-field">
+					<label for="password">Password</label>
+					<input
+						onchange={handlePasswordChange}
+						bind:value={password}
+						id="password"
+						name="password"
+						type="password"
+						autocomplete="current-password"
+						required
+						placeholder="Password"
+					/>
+				</div>
+				{#if displayMissingPasswordMessage}
+					<small class="error">{missingPasswordMessage}</small>
+				{/if}
+			</div>
+
+			<footer class="form-footer">
+				<button disabled={!formIsValid || !email.length} type="submit">Login</button>
+				<a href={PAGE_PATH['signup']}>Sign up</a>
+			</footer>
+		</form>
+
+		<div class="form-result">
+			{#if form?.error}
+				<p class="error">
+					{form.error}
+				</p>
 			{/if}
 		</div>
-
-		<div class="form-field">
-			<label for="password">Password</label>
-			<input
-				onchange={handlePasswordChange}
-				bind:value={password}
-				id="password"
-				name="password"
-				type="password"
-				autocomplete="current-password"
-				required
-				placeholder="Password"
-			/>
-		</div>
-		{#if displayMissingPasswordMessage}
-			<small class="error">{missingPasswordMessage}</small>
-		{/if}
-	</div>
-
-	<footer class="form-footer">
-		<button disabled={!formIsValid || !email.length} type="submit">Login</button>
-		<a href={PAGE_PATH['signup']}>Sign up</a>
-	</footer>
-</form>
-
-<div class="form-result">
-	{#if form?.error}
-		<p class="error">
-			{form.error}
-		</p>
-	{/if}
-</div>
+	</section>
+</article>

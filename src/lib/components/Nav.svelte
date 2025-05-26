@@ -24,10 +24,10 @@
 		if (event.key === 'Escape') {
 			displayMenu = false;
 		}
-	}
+	};
 </script>
 
-<svelte:window onkeyup={handleKeyup}/>
+<svelte:window onkeyup={handleKeyup} />
 
 <nav aria-label="Site navigation">
 	<span>Nav</span>

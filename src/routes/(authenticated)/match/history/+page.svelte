@@ -6,8 +6,8 @@
 
 	interface Props {
 		data: {
-			matches: Match[]
-		}
+			matches: Match[];
+		};
 	}
 
 	let { data }: Props = $props();
@@ -30,12 +30,12 @@
 </article>
 
 <style lang="css">
-    ul {
-        flex-direction: column;
-    }
+	ul {
+		flex-direction: column;
+	}
 
-		a {
-				display: flex;
-				justify-content: space-between;
-		}
+	a {
+		display: flex;
+		justify-content: space-between;
+	}
 </style>

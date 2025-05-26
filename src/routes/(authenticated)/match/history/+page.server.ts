@@ -7,9 +7,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	// only retrieve the matches that have an end date, as these matches are closed
-	const {
-		data: matches, error
-	} = await supabase
+	const { data: matches, error } = await supabase
 		.from('matches')
 		.select('id, name') // retrieve only what we need at this point
 		.not('end_date', 'is', null);
@@ -24,6 +22,6 @@ export const load: PageServerLoad = async () => {
 	return {
 		matches
 	} satisfies {
-		matches: Match[]
+		matches: Match[];
 	};
 };

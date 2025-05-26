@@ -5,15 +5,15 @@
 
 	interface Props {
 		data: {
-			match: Match
-		}
+			match: Match;
+		};
 	}
 
 	let { data }: Props = $props();
 </script>
 
 <article>
-	<PageHeader manualPageName={data.match.name}/>
+	<PageHeader manualPageName={data.match.name} />
 
 	<section>
 		<ul>
@@ -31,11 +31,11 @@
 
 <style lang="css">
 	ul {
-			flex-direction: column;
+		flex-direction: column;
 	}
 
 	li {
-			display: flex;
-			justify-content: space-between;
+		display: flex;
+		justify-content: space-between;
 	}
 </style>

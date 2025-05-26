@@ -9,5 +9,5 @@ export const load: LayoutServerLoad = async () => {
 
 	return {
 		user
-	}
+	};
 };

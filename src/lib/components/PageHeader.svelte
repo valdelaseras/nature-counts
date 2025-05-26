@@ -6,9 +6,9 @@
 	import { PAGE_PATH, resolvePageName } from '$lib/shared/pages';
 
 	interface Props {
-		displayQuickNav?: boolean,
-		quickNavTarget?: string,
-		manualPageName?: string
+		displayQuickNav?: boolean;
+		quickNavTarget?: string;
+		manualPageName?: string;
 	}
 
 	let {
