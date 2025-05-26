@@ -1,15 +1,10 @@
-// Libraries
-import { supabase } from '$lib/supabaseClient';
-
 // Types
 import type { Match } from '$lib/shared/types';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params }) => {
-	console.log(params.id);
-
+export const load: PageServerLoad = async ({ params, locals }) => {
 	// retrieve the target match
-	const { data: match, error } = await supabase
+	const { data: match, error } = await locals.supabase
 		.from('matches')
 		.select()
 		.eq('id', params.id)
