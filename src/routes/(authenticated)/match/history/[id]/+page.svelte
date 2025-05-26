@@ -1,9 +1,15 @@
 <script lang="ts">
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import type { Match } from '$lib/shared/types';
 
-	// @todo type this (to Match)
-	let { data } = $props();
+	interface Props {
+		data: {
+			match: Match
+		}
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <article>

@@ -1,6 +1,6 @@
 export type Match = {
 	id: number,
-	startDate?: Date,
-	endDate?: Date,
+	start_date?: Date, // @todo camel case?
+	end_date?: Date, // @todo camel case?
 	name?: string
 }

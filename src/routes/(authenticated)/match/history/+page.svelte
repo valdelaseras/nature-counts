@@ -2,8 +2,15 @@
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
 	import { PAGE_PATH } from '$lib/shared/pages';
+	import type { Match } from '$lib/shared/types';
 
-	let { data } = $props();
+	interface Props {
+		data: {
+			matches: Match[]
+		}
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <article>
