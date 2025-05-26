@@ -2,10 +2,6 @@
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
 
-	// Shared
-	// @todo, type data
-	// import type { Match } from '$lib/shared/types';
-
 	let { data } = $props();
 </script>
 
