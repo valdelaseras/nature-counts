@@ -20,8 +20,14 @@
 		displayMenu = false;
 	});
 
-	// @todo: svelte:window (4) event listener to keyup Escape and then displayMenu = false
+	const handleKeyup = (event: KeyboardEvent) => {
+		if (event.key === 'Escape') {
+			displayMenu = false;
+		}
+	}
 </script>
+
+<svelte:window onkeyup={handleKeyup}/>
 
 <nav aria-label="Site navigation">
 	<span>Nav</span>
