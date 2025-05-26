@@ -2,7 +2,7 @@
 	// Svelte
 	import { afterNavigate } from '$app/navigation';
 
-	// Supabase
+	// Libraries
 	import type { User } from '@supabase/supabase-js';
 
 	// Shared

@@ -7,18 +7,6 @@
 	import { PAGE_PATH } from '$lib/shared/pages';
 </script>
 
-<!--<script>-->
-<!--  let { data } = $props();-->
-
-<!--  console.log(data);-->
-<!--</script>-->
-
-<!--<ul>-->
-<!--  {#each data.countries as country (country.id)}-->
-<!--    <li>{country.name}</li>-->
-<!--  {/each}-->
-<!--</ul>-->
-
 <main>
 	<PageHeader displayQuickNav={false} />
 

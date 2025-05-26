@@ -1,4 +1,4 @@
-// Supabase
+// Libraries
 import { supabase } from '$lib/supabaseClient';
 
 // Svelte
