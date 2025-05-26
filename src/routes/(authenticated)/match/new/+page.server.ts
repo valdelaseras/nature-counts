@@ -1,8 +1,14 @@
 // Libraries
 import { supabase } from '$lib/supabaseClient';
 
+// Svelte
+import { redirect } from '@sveltejs/kit';
+
 // Types
 import type { Actions } from './$types';
+
+// Shared
+import { PAGE_PATH } from '$lib/shared/pages';
 
 export const actions: Actions = {
 	createMatch: async ({ request }) => {
@@ -30,8 +36,7 @@ export const actions: Actions = {
 			};
 		}
 
-		return {
-			success: true
-		};
+		// @todo: redirect somewhere else.
+		throw redirect(303, PAGE_PATH['current-matches']);
 	}
 };

@@ -40,10 +40,6 @@
 		</form>
 
 		<div class="form-result">
-			{#if form?.success}
-				<p>Match created</p>
-			{/if}
-
 			{#if form?.error}
 				<p class="error">
 					{form.error}
