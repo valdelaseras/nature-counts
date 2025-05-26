@@ -1,6 +1,6 @@
 export type Match = {
 	id: number,
-	startDate: Date,
+	startDate?: Date,
 	endDate?: Date,
 	name?: string
 }

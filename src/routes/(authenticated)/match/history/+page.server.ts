@@ -11,7 +11,7 @@ export const load: PageServerLoad = async () => {
 		data: matches, error
 	} = await supabase
 		.from('matches')
-		.select()
+		.select('id, name') // retrieve only what we need at this point
 		.not('end_date', 'is', null);
 
 	if (error) {

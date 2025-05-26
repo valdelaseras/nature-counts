@@ -5,15 +5,17 @@
 	// Shared
 	import { PAGE_PATH, resolvePageName } from '$lib/shared/pages';
 
-	let { displayQuickNav = true, quickNavTarget = 'dashboard' } = $props();
+	let {
+		displayQuickNav = true,
+		quickNavTarget = 'dashboard',
+		manualPageName = ''
+	} = $props();
 
 	let pageName = resolvePageName(page.url.pathname);
 </script>
 
 <header>
-	{#if pageName}
-		<h1>{pageName}</h1>
-	{/if}
+	<h1>{manualPageName ? manualPageName : pageName}</h1>
 
 	{#if displayQuickNav}
 		<nav aria-label="Site navigation">

@@ -3,7 +3,7 @@ import { supabase } from '$lib/supabaseClient';
 
 // Types
 import type { Match } from '$lib/shared/types';
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad }  from './$types';
 
 export const load: PageServerLoad = async () => {
 	// only retrieve the matches that do not have an end date, as these matches are ongoing
@@ -11,7 +11,7 @@ export const load: PageServerLoad = async () => {
 		data: matches, error
 	} = await supabase
 		.from('matches')
-		.select()
+		.select('id, name')
 		.is('end_date', null);
 
 	if (error) {

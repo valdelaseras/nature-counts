@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import { PAGE_PATH } from '$lib/shared/pages';
 
 	let { data } = $props();
 </script>
@@ -12,7 +13,9 @@
 		<ul>
 			{#each data.matches as match (match.id)}
 				<li>
-					{match.name}
+					<a href="{PAGE_PATH['match-history']}/{match.id}">
+						<span>{match.name}</span>
+					</a>
 				</li>
 			{/each}
 		</ul>
@@ -23,4 +26,9 @@
     ul {
         flex-direction: column;
     }
+
+		a {
+				display: flex;
+				justify-content: space-between;
+		}
 </style>
