@@ -6,13 +6,13 @@ import type { Match } from '$lib/shared/types';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	// only retrieve the matches that do not have an end date, as these matches are ongoing
+	// only retrieve the matches that have an end date, as these matches are closed
 	const {
 		data: matches, error
 	} = await supabase
 		.from('matches')
 		.select()
-		.is('end_date', null);
+		.not('end_date', 'is', null);
 
 	if (error) {
 		console.error('Error fetching matches:', error);
