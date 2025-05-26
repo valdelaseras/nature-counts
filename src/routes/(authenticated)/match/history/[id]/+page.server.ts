@@ -19,6 +19,8 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	if (error) {
 		console.error('Error fetching match:', error);
+		// @todo nice errors & messages
+		throw error;
 	}
 
 	return {

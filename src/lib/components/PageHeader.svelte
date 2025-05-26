@@ -5,11 +5,17 @@
 	// Shared
 	import { PAGE_PATH, resolvePageName } from '$lib/shared/pages';
 
+	interface Props {
+		displayQuickNav?: boolean,
+		quickNavTarget?: string,
+		manualPageName?: string
+	}
+
 	let {
 		displayQuickNav = true,
 		quickNavTarget = 'dashboard',
 		manualPageName = ''
-	} = $props();
+	}: Props = $props();
 
 	let pageName = resolvePageName(page.url.pathname);
 </script>
