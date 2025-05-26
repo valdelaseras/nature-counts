@@ -31,9 +31,6 @@
 				</div>
 			</div>
 
-			<!--@todo cleaner solution w user locals-->
-			<input type="hidden" name="user-id" value={data.user?.id} />
-
 			<footer class="form-footer">
 				<button disabled={!formIsValid} type="submit">Create</button>
 			</footer>
