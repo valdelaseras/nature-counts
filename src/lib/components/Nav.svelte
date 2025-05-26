@@ -83,4 +83,8 @@
 		top: 53px;
 		gap: 1.5rem;
 	}
+
+	button {
+			width: fit-content;
+	}
 </style>

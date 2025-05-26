@@ -1,6 +1,8 @@
 <script lang="ts">
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
+
+	// Types
 	import type { Match } from '$lib/shared/types';
 
 	interface Props {
@@ -13,7 +15,9 @@
 </script>
 
 <article>
-	<PageHeader manualPageName={data.match.name} />
+	<PageHeader
+		quickNavTarget="match-history"
+		manualPageName={data.match.name} />
 
 	<section>
 		<ul>
