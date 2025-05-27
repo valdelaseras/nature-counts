@@ -8,6 +8,7 @@ export const actions: Actions = {
 		// @todo: plaintext pw
 		const password = formData.get('password') as string;
 
+		// @todo: when user is created, create Users table row entry
 		const { data: authData, error } = await locals.supabase.auth.signUp({
 			email,
 			password,
