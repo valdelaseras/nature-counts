@@ -30,10 +30,6 @@
 </article>
 
 <style lang="css">
-	ul {
-		flex-direction: column;
-	}
-
 	a {
 		display: flex;
 		justify-content: space-between;

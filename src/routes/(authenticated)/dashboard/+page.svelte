@@ -14,7 +14,7 @@
 			<h2>Matches</h2>
 		</header>
 		<nav aria-label="Site navigation">
-			<ul class="tile-list">
+			<ul class="row-list tile-list">
 				<li>
 					<a href={PAGE_PATH['new-match']}>New match</a>
 				</li>

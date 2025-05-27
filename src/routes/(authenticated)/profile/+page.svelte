@@ -41,8 +41,4 @@
 		flex-direction: column;
 		gap: 1rem;
 	}
-
-	ul {
-		flex-direction: column;
-	}
 </style>

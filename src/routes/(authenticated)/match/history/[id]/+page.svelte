@@ -31,6 +31,25 @@
 				<span class="bold">End date</span>
 				<span>{formatDate(data.match.end_date)}</span>
 			</li>
+			<li class="bold">
+				<span>Winner</span>
+				<span>Name</span>
+			</li>
+			<li>
+				<span class="bold">Participants</span>
+				<ul class="row-list">
+					<!--for each participant-->
+					<li>
+						<span>Name</span>
+					</li>
+					<li>
+						<span>Name</span>
+					</li>
+					<li>
+						<span>Name</span>
+					</li>
+				</ul>
+			</li>
 		</ul>
 
 		<h2>Observations</h2>
@@ -45,8 +64,9 @@
 			</thead>
 			<tbody>
 				{#each data.match.observations ?? [] as observation (observation.id)}
+					<!--@todo probably wanna go to an observation details page... maybe. Or a component or something-->
 					<tr>
-						<td>{observation.kingdom}</td>
+						<td class="capitalize">{observation.kingdom}</td>
 						<td>{observation.user.name}</td>
 						<td>{formatDateTimeTimezone(observation.created_at)}</td>
 					</tr>
@@ -57,17 +77,12 @@
 </article>
 
 <style lang="css">
-	ul {
-		flex-direction: column;
-	}
-
 	li {
 		display: flex;
 		justify-content: space-between;
-		gap: 1rem;
 	}
 
-	table {
-		text-align: left;
+	.row-list li:not(:last-child)::after {
+		content: ',';
 	}
 </style>

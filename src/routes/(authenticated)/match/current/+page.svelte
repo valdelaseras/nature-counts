@@ -25,9 +25,3 @@
 		</ul>
 	</section>
 </article>
-
-<style lang="css">
-	ul {
-		flex-direction: column;
-	}
-</style>
