@@ -2,7 +2,6 @@
 import type { Match } from '$lib/shared/types';
 import type { PageServerLoad } from './$types';
 
-
 export const load: PageServerLoad = async ({ params, locals }) => {
 	const user = locals.user;
 

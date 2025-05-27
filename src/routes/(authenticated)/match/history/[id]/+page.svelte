@@ -5,6 +5,9 @@
 	// Types
 	import type { Match } from '$lib/shared/types';
 
+	// Shared
+	import { formatDate, formatDateTimeTimezone } from '$lib/shared/dateFormatters';
+
 	interface Props {
 		data: {
 			match: Match;
@@ -22,11 +25,11 @@
 		<ul>
 			<li>
 				<span class="bold">Start date</span>
-				<span>{data.match.start_date}</span>
+				<span>{formatDate(data.match.start_date)}</span>
 			</li>
 			<li>
 				<span class="bold">End date</span>
-				<span>{data.match.end_date}</span>
+				<span>{formatDate(data.match.end_date)}</span>
 			</li>
 		</ul>
 
@@ -44,7 +47,7 @@
 					</div>
 					<div>
 						<p class="bold">Created at</p>
-						<span>{observation.created_at}</span>
+						<span>{formatDateTimeTimezone(observation.created_at)}</span>
 					</div>
 				</li>
 			{/each}
