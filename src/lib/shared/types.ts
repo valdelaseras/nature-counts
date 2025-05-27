@@ -1,6 +1,5 @@
 export type Match = {
 	id: number;
-	uuid?: string;
 	created_by?: string; // user uuid
 	start_date?: Date;
 	end_date?: Date;
@@ -10,11 +9,10 @@ export type Match = {
 
 export type Observation = {
 	id: number;
-	uuid?: string;
 	kingdom: Kingdom;
 	created_at: string; // timestamptz
 	created_by: string; // user uuid
-	match: string; // match uuid
+	match: string; // match id
 	user: User;
 };
 
