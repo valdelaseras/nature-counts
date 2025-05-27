@@ -13,31 +13,31 @@ export const actions: Actions = {
 
 		if (!user) {
 			console.error('no user');
+		} else {
+			const formData = await request.formData();
+			const name = formData.get('match-name') as string;
+			const startDate = new Date().toISOString().split('T')[0];
+
+			const { error } = await locals.supabase
+				.from('matches')
+				.insert([
+					{
+						name: name,
+						start_date: startDate,
+						created_by: user.id
+					}
+				])
+				.select();
+
+			if (error) {
+				return {
+					success: false,
+					error: error.message
+				};
+			}
+
+			// @todo: redirect somewhere else.
+			throw redirect(303, PAGE_PATH['current-matches']);
 		}
-
-		const formData = await request.formData();
-		const name = formData.get('match-name') as string;
-		const startDate = new Date().toISOString().split('T')[0];
-
-		const { error } = await locals.supabase
-			.from('matches')
-			.insert([
-				{
-					name: name,
-					start_date: startDate,
-					created_by: user?.id
-				}
-			])
-			.select();
-
-		if (error) {
-			return {
-				success: false,
-				error: error.message
-			};
-		}
-
-		// @todo: redirect somewhere else.
-		throw redirect(303, PAGE_PATH['current-matches']);
 	}
 };

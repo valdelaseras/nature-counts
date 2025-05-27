@@ -85,6 +85,6 @@
 	}
 
 	button {
-			width: fit-content;
+		width: fit-content;
 	}
 </style>

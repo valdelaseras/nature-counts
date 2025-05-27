@@ -22,3 +22,7 @@ h5 {
 .bold {
 	font-weight: bold;
 }
+
+.capitalize {
+	text-transform: capitalize;
+}
