@@ -34,24 +34,25 @@
 		</ul>
 
 		<h2>Observations</h2>
-		<ul>
-			{#each data.match.observations ?? [] as observation (observation.id)}
-				<li>
-					<div>
-						<p class="bold">Kingdom</p>
-						<span class="capitalize">{observation.kingdom}</span>
-					</div>
-					<div>
-						<p class="bold">Created by</p>
-						<span>{observation.user.name}</span>
-					</div>
-					<div>
-						<p class="bold">Created at</p>
-						<span>{formatDateTimeTimezone(observation.created_at)}</span>
-					</div>
-				</li>
-			{/each}
-		</ul>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Kingdom</th>
+					<th>Observer</th>
+					<th>Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each data.match.observations ?? [] as observation (observation.id)}
+					<tr>
+						<td>{observation.kingdom}</td>
+						<td>{observation.user.name}</td>
+						<td>{formatDateTimeTimezone(observation.created_at)}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
 	</section>
 </article>
 
@@ -64,5 +65,9 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 1rem;
+	}
+
+	table {
+			text-align: left;
 	}
 </style>
