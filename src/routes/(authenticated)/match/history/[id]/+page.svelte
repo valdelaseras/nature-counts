@@ -68,6 +68,6 @@
 	}
 
 	table {
-			text-align: left;
+		text-align: left;
 	}
 </style>

@@ -1,7 +1,4 @@
-const format = (
-	date: string | undefined,
-	includeTime: boolean = false
-) => {
+const format = (date: string | undefined, includeTime: boolean = false) => {
 	if (!date) {
 		return '-';
 	}

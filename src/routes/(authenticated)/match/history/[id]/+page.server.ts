@@ -10,7 +10,8 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	} else {
 		const { data: match, error } = await locals.supabase
 			.from('matches')
-			.select(`
+			.select(
+				`
         *,
         observations(
           id,
@@ -24,7 +25,8 @@ export const load: PageServerLoad = async ({ params, locals }) => {
             name
           )
         )
-      `)
+      `
+			)
 			.eq('created_by', user.id)
 			.eq('id', params.id)
 			.single();
