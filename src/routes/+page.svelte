@@ -11,7 +11,7 @@
 	<PageHeader displayQuickNav={false} />
 
 	<nav aria-label="Site navigation">
-		<ul>
+		<ul class="row-list">
 			<li>
 				<a href={PAGE_PATH['login']}>Login</a>
 			</li>
