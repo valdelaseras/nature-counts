@@ -7,6 +7,7 @@ import type { Actions } from './$types';
 // Shared
 import { PAGE_PATH } from '$lib/shared/pages';
 
+// @todo: server-side validation
 export const actions: Actions = {
 	createMatch: async ({ request, locals }) => {
 		const user = locals.user;

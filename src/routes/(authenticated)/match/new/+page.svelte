@@ -5,11 +5,13 @@
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
 
-	let { form, data }: PageProps = $props();
+	let { form }: PageProps = $props();
 
 	let matchName = $state('');
 
 	const formIsValid = $derived(matchName.length);
+
+	// @todo: form validation
 </script>
 
 <article>

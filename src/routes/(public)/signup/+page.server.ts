@@ -1,5 +1,6 @@
 import type { Actions } from './$types';
 
+// @todo: server-side validation
 // @todo: set minimum password requirements
 export const actions: Actions = {
 	signup: async ({ request, locals }) => {

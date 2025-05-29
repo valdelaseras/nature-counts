@@ -1,6 +1,8 @@
 <script lang="ts">
 	// Components
 	import PageHeader from '$lib/components/PageHeader.svelte';
+
+	// Shared
 	import { PAGE_PATH } from '$lib/shared/pages';
 	import type { Match } from '$lib/shared/types';
 

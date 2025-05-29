@@ -11,10 +11,11 @@ export type Observation = {
 	kingdom: Kingdom;
 	created_at: string;
 	match: string; // match id
-	user: User;
+	user_profile: Profile;
 };
 
-type User = {
+// User profile
+export type Profile = {
 	id: number;
 	name: string;
 };

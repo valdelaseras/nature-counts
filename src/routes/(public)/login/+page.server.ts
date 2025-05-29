@@ -7,6 +7,7 @@ import type { Actions } from './$types';
 // Shared
 import { PAGE_PATH } from '$lib/shared/pages';
 
+// @todo: server-side validation
 export const actions: Actions = {
 	login: async ({ request, locals }) => {
 		const formData = await request.formData();
